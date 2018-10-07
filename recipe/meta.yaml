@@ -1,4 +1,7 @@
-{% set version = "0.9-20" %}
+{% set version = "1.0-1" %}
+
+{% set posix = 'm2-' if win else '' %}
+{% set native = 'm2w64-' if win else '' %}
 
 package:
   name: r-oce
@@ -9,26 +12,38 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/oce_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/oce/oce_{{ version }}.tar.gz
-  sha256: 85a6444d6f15510162dd17e10c8c9066c26565ec42261c6ace42ac3767ee93dd
+  sha256: f718288f83ff0dd6a296f446ac190378d9d828c6ab49d077bfd1ed7f6e4fc472
 
 build:
+  merge_build_host: True  # [win]
   number: 0
-  skip: True  # [win32]
   script: R CMD INSTALL --build .
   rpaths:
     - lib/R/lib/
     - lib/
 
-requirements:  # [not win32]
-  build:  # [not win32]
-    - r-base  # [not win32]
-    - posix  # [win64]
-    - m2w64-toolchain  # [win64]
-    - gcc  # [not win]
-    - r-gsw  # [not win32]
-  run:  # [not win32]
-    - r-base  # [not win32]
-    - r-gsw  # [not win32]
+requirements:
+  build:
+    - {{ compiler('c') }}        # [not win]
+    - {{ compiler('cxx') }}      # [not win]
+    - {{ compiler('fortran') }}  # [not win]
+    - {{native}}toolchain        # [win]
+    - {{posix}}filesystem        # [win]
+    - {{posix}}make
+    - {{posix}}sed               # [win]
+    - {{posix}}coreutils         # [win]
+    - {{posix}}zip               # [win]
+  host:
+    - r-base
+    - r-rcpp
+    - r-gsw
+    - r-testthat
+  run:
+    - r-base
+    - {{native}}gcc-libs         # [win]
+    - r-rcpp
+    - r-gsw
+    - r-testthat
 
 test:
   commands:
