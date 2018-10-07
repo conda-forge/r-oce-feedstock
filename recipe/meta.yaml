@@ -8,6 +8,7 @@ package:
   version: {{ version.replace("-", "_") }}
 
 source:
+  merge_build_host: True  # [win]
   fn: oce_{{ version }}.tar.gz
   url:
     - http://cran.r-project.org/src/contrib/oce_{{ version }}.tar.gz
