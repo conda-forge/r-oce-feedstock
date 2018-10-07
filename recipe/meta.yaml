@@ -8,7 +8,6 @@ package:
   version: {{ version.replace("-", "_") }}
 
 source:
-  merge_build_host: True  # [win]
   fn: oce_{{ version }}.tar.gz
   url:
     - http://cran.r-project.org/src/contrib/oce_{{ version }}.tar.gz
@@ -16,6 +15,7 @@ source:
   sha256: f718288f83ff0dd6a296f446ac190378d9d828c6ab49d077bfd1ed7f6e4fc472
 
 build:
+  merge_build_host: True  # [win]
   number: 0
   script: R CMD INSTALL --build .
   rpaths:
