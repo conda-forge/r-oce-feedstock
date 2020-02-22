@@ -1,4 +1,4 @@
-{% set version = "1.1-1" %}
+{% set version = "1.2-0" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/oce_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/oce/oce_{{ version }}.tar.gz
-  sha256: 2ce8f8d3adb3da5c8a09fda060e1ff79cad0f0f6f918f8fe64f51a6cd6b58e43
+  sha256: 99072f2b20ad471b5a2afeb4d0690cad57cc770d60769a5cb20d001511439aa2
 
 build:
   merge_build_host: True  # [win]
-  number: 2
+  number: 0
   script: R CMD INSTALL --build .
   rpaths:
     - lib/R/lib/
@@ -55,6 +55,7 @@ test:
 about:
   home: http://dankelley.github.com/oce/
   license: GPL-3.0
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
   summary: "Supports the analysis of Oceanographic data, including 'ADCP' measurements,
     measurements made with 'argo' floats, 'CTD' measurements, sectional data,
     sea-level time series, coastline and topographic data, etc. Provides specialized
