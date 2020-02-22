@@ -55,6 +55,7 @@ test:
 about:
   home: http://dankelley.github.com/oce/
   license: GPL-3.0
+  license_file: '{{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3'
   summary: "Supports the analysis of Oceanographic data, including 'ADCP' measurements,
     measurements made with 'argo' floats, 'CTD' measurements, sectional data,
     sea-level time series, coastline and topographic data, etc. Provides specialized
