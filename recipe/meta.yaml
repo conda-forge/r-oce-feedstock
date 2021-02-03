@@ -40,12 +40,14 @@ requirements:
     - r-rcpp
     - r-gsw
     - r-testthat
+    - r-sf
   run:
     - r-base
     - {{ native }}gcc-libs         # [win]
     - r-rcpp
     - r-gsw
     - r-testthat
+    - r-sf
 
 test:
   commands:
