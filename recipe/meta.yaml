@@ -1,4 +1,4 @@
-{% set version = "1.7-6" %}
+{% set version = "1.7-8" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,7 +12,7 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/oce_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/oce/oce_{{ version }}.tar.gz
-  sha256: 3aaa7600bd2b322062cdeb0a0d910f6fa872fecc4dbc2e30665d51acb12261a8
+  sha256: 2ac98548611bfe043e423b46fd3214f8edd6428944cdedede87367025610cc48
 
 build:
   merge_build_host: true  # [win]
