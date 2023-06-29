@@ -1,4 +1,4 @@
-{% set version = "1.8-0" %}
+{% set version = "1.8-1" %}
 
 {% set posix = 'm2-' if win else '' %}
 {% set native = 'm2w64-' if win else '' %}
@@ -12,11 +12,11 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/oce_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/oce/oce_{{ version }}.tar.gz
-  sha256: 6365a99fa9fc4204d3b72f52209023c392405b9e4b7296c14e83df456bba2ead
+  sha256: 22910a5a88b43ae60f12f3d4d4627777c54910c0fef71fa5c537e24af39fde67
 
 build:
   merge_build_host: true  # [win]
-  number: 1
+  number: 0
   script: R CMD INSTALL --build .
   rpaths:
     - lib/R/lib/
