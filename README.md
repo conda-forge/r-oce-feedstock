@@ -9,7 +9,7 @@ About r-oce
 
 Home: http://dankelley.github.com/oce/
 
-Package license: GPL-3.0
+Package license: GPL-3.0-only
 
 Summary: Supports the analysis of Oceanographic data, including 'ADCP' measurements, measurements made with 'argo' floats, 'CTD' measurements, sectional data, sea-level time series, coastline and topographic data, etc. Provides specialized functions for calculating seawater properties such as potential temperature in either the 'UNESCO' or 'TEOS-10' equation of state. Produces graphical displays that conform to the conventions of the Oceanographic literature.
 
@@ -18,7 +18,7 @@ About r-oce
 
 Home: http://dankelley.github.com/oce/
 
-Package license: GPL-3.0
+Package license: GPL-3.0-only
 
 Summary: Supports the analysis of Oceanographic data, including 'ADCP' measurements, measurements made with 'argo' floats, 'CTD' measurements, sectional data, sea-level time series, coastline and topographic data, etc. Provides specialized functions for calculating seawater properties such as potential temperature in either the 'UNESCO' or 'TEOS-10' equation of state. Produces graphical displays that conform to the conventions of the Oceanographic literature.
 
