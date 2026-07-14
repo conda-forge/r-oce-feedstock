@@ -1,4 +1,4 @@
-{% set version = "1.8-3" %}
+{% set version = "1.8-4" %}
 
 {% set posix = 'm2-' if win else '' %}
 
@@ -11,10 +11,10 @@ source:
   url:
     - http://cran.r-project.org/src/contrib/oce_{{ version }}.tar.gz
     - http://cran.r-project.org/src/contrib/Archive/oce/oce_{{ version }}.tar.gz
-  sha256: f1f129ef263f71cae726df0a60e38bfd33e179c5642c5d96ac75057bc70b6f8f
+  sha256: a280dd3a67855f4d768080df8d3a8e5d19572669ddb29889168a0edd95a2c917
 
 build:
-  number: 2
+  number: 0
   rpaths:
     - lib/R/lib/
     - lib/
@@ -61,8 +61,8 @@ about:
   home: http://dankelley.github.com/oce/
   license: GPL-3.0-only
   license_file: {{ environ["PREFIX"] }}/lib/R/share/licenses/GPL-3
-  summary: Supports the analysis of Oceanographic data, including 'ADCP' measurements, measurements made with 'argo' floats, 'CTD' measurements, sectional data, sea-level time series, coastline and topographic data, etc. Provides specialized functions for calculating seawater properties such as potential temperature in either
-    the 'UNESCO' or 'TEOS-10' equation of state. Produces graphical displays that conform to the conventions of the Oceanographic literature.
+  summary: Supports the analysis of Oceanographic data, including 'ADCP' measurements, measurements made with 'argo' floats, 'CTD' measurements, sectional data, sea-level time series, coastline and topographic data, etc. Provides specialized functions for calculating seawater properties such as potential temperature in
+    either the 'UNESCO' or 'TEOS-10' equation of state. Produces graphical displays that conform to the conventions of the Oceanographic literature.
 
 extra:
   recipe-maintainers:
